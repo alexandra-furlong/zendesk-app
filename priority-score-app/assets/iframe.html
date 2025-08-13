@@ -2,51 +2,83 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <!--   See Using Zendesk Garden:
-    https://developer.zendesk.com/apps/docs/developer-guide/setup#using-zendesk-garden
-    https://garden.zendesk.com/css-components/bedrock/
-    https://garden.zendesk.com/css-components/utilities/typography/
-   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div class="wrap">
-      <div class="section-title">
-        <h3>Priority Score</h3>
-      </div>
-      <div class="priority-score">
-        <!-- TODO: Add event to change icon color depending on score value -->
-        <div class="priority-icon red"></div>
-        <span class="score-value">90</span>
-        <span class="score-denominator"> / 100</span>
+      <div class="priority-section">
+        <div class="section-title">
+          <h3>Priority Score</h3>
+        </div>
+        <div class="priority-score">
+          <!-- TODO: Add event to change icon color depending on score value -->
+          <div class="priority-icon red"></div>
+          <span class="score-value">90</span>
+          <span class="score-denominator"> / 100</span>
+        </div>
       </div>
 
       <!-- Tab Links  -->
-      <div class="tabs">
+      <div class="tabs-container">
         <button class="tab-button open">Ticket Information</button>
         <button class="tab-button">Client Information</button>
       </div>
 
+      <div class="sliding-divider"></div>
       <div class="divider"></div>
 
+      <!-- TODO: Update rows to display data from json file -->
       <!-- Tab Content -->
-      <div id="ticket-info" class="tab-content open">
-        <div class="subject-row">Subject <span id="ticket-subject"></span></div>
-        <div class="created-at-row">
-          Created At <span id="date-created"></span>
+      <div id="ticket-info" class="tabs-content-container open">
+        <div class="data-row">
+          <div class="field-label">Subject</div>
+          <div class="field-value" id="ticket-subject">Payroll Issue</div>
         </div>
-        <div class="sla-row">SLA Due <span id="sla-time"></span></div>
-        <div class="priority-row">
-          Priority
-          <div class="priority-icon red"></div>
-          <span id="priority-status"></span>
+        <div class="data-row">
+          <div class="field-label">Created At</div>
+          <div class="field-value" id="date-created">Aug 01, 2025</div>
         </div>
-        <div class="tags-row">Tags <span id="assigned-tags"></span></div>
+        <div class="data-row">
+          <div class="field-label">SLA Due</div>
+          <div class="field-value" id="sla-time">1d 2h 15m</div>
+        </div>
+        <div class="data-row">
+          <div class="field-label">Priority</div>
+          <div class="field-value">
+            <div class="priority-icon red"></div>
+            <span id="priority-value">Urgent</span>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="field-label">Tags</div>
+          <div class="field-value" id="assigned-tags">
+            Global Payroll, Churn Risk
+          </div>
+        </div>
       </div>
 
-      <div id="client-info" class="tab-content hide">
-        <div class="name-row">Client Name <span id="client-name"></span></div>
-        <div class="email-row">Email <span id="client-email"></span></div>
-        <div class="user-id-row">User ID <span id="client-user-id"></span></div>
+      <div id="client-info" class="tabs-content-container hide">
+        <div class="data-row">
+          <div class="field-label">
+            Client Name <span class="field-value" id="client-name"></span>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="field-label">
+            Email <span class="field-value" id="client-email"></span>
+          </div>
+        </div>
+        <div class="data-row">
+          <div class="field-label">
+            User ID <span class="field-value" id="client-user-id"></span>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
