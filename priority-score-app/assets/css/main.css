@@ -17,17 +17,30 @@
   color: rgb(41, 50, 57);
 }
 
-.priority-icon.red {
+.priority-icon {
   width: 6px;
   height: 6px;
-  background: rgba(255, 130, 130, 1);
-  border: 3px solid rgba(255, 228, 228, 0.6);
+  border: 3px solid rgba(255, 255, 255, 0.7);
   border-radius: 100px;
   display: inline-flex;
   flex-shrink: 0;
   margin: 0 0 0.125em 0;
   align-self: center;
   vertical-align: middle;
+}
+.priority-icon.red {
+  background: rgba(243, 77, 106, 1);
+}
+.priority-icon.orange {
+  background: rgba(255, 141, 74, 1);
+}
+
+.priority-icon.green {
+  background: rgba(49, 180, 159, 1);
+}
+
+.priority-icon.blue {
+  background: rgba(82, 146, 243, 1);
 }
 
 .score-value {
@@ -56,7 +69,7 @@
 
 .tab-button.open {
   background-color: rgba(31, 115, 183, 0.16);
-  /* Color is the exact match for Zendesk's active state patterns */
+  /* Color is the exact match for Zendesk's active state buttons */
   border-radius: 4px;
   /* Same border radius an Zendesk's buttons */
   padding: 0.25em;
