@@ -38,28 +38,26 @@
       <div id="ticket-info" class="tabs-content-container open">
         <div class="data-row">
           <div class="field-label">Subject</div>
-          <div class="field-value" id="ticket-subject">Payroll Issue</div>
+          <div class="field-value" id="ticket-subject"></div>
         </div>
         <div class="data-row">
           <div class="field-label">Created At</div>
-          <div class="field-value" id="date-created">Aug 01, 2025</div>
+          <div class="field-value" id="date-created"></div>
         </div>
         <div class="data-row">
           <div class="field-label">SLA Due</div>
-          <div class="field-value" id="sla-time">1d 2h 15m</div>
+          <div class="field-value" id="sla-time"></div>
         </div>
         <div class="data-row">
           <div class="field-label">Priority</div>
           <div class="field-value">
             <div class="priority-icon red"></div>
-            <span id="priority-value">Urgent</span>
+            <span id="priority-value"></span>
           </div>
         </div>
         <div class="data-row">
           <div class="field-label">Tags</div>
-          <div class="field-value" id="assigned-tags">
-            Global Payroll, Churn Risk
-          </div>
+          <div class="field-value" id="assigned-tags"></div>
         </div>
       </div>
 
@@ -82,11 +80,7 @@
       </div>
     </div>
     <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
-    <script>
-      // Initialise Apps framework client. See also:
-      // https://developer.zendesk.com/apps/docs/developer-guide/getting_started
-      var client = ZAFClient.init();
-      client.invoke("resize", { width: "100%", height: "200px" });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
