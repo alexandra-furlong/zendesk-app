@@ -17,25 +17,23 @@
           <h3>Priority Score</h3>
         </div>
         <div class="priority-score">
-          <!-- TODO: Add event to change icon color depending on score value -->
-          <div class="priority-icon red"></div>
-          <span class="score-value">90</span>
+          <div class="priority-icon"></div>
+          <span id="score-value"></span>
           <span class="score-denominator"> / 100</span>
         </div>
       </div>
 
       <!-- Tab Links  -->
       <div class="tabs-container">
-        <button class="tab-button open">Ticket Information</button>
+        <button class="tab-button show">Ticket Information</button>
         <button class="tab-button">Client Information</button>
       </div>
 
       <div class="sliding-divider"></div>
       <div class="divider"></div>
 
-      <!-- TODO: Update rows to display data from json file -->
       <!-- Tab Content -->
-      <div id="ticket-info" class="tabs-content-container open">
+      <div id="ticket-info" class="tabs-content-container show">
         <div class="data-row">
           <div class="field-label">Subject</div>
           <div class="field-value" id="ticket-subject"></div>
@@ -51,7 +49,7 @@
         <div class="data-row">
           <div class="field-label">Priority</div>
           <div class="field-value">
-            <div class="priority-icon red"></div>
+            <div class="priority-icon"></div>
             <span id="priority-value"></span>
           </div>
         </div>
@@ -63,21 +61,20 @@
 
       <div id="client-info" class="tabs-content-container hide">
         <div class="data-row">
-          <div class="field-label">
-            Client Name <span class="field-value" id="client-name"></span>
-          </div>
+          <div class="field-label">Client Name</div>
+          <div class="field-value" id="client-name"></div>
         </div>
         <div class="data-row">
-          <div class="field-label">
-            Email <span class="field-value" id="client-email"></span>
-          </div>
+          <div class="field-label">Email</div>
+          <div class="field-value" id="client-email"></div>
         </div>
         <div class="data-row">
-          <div class="field-label">
-            User ID <span class="field-value" id="client-user-id"></span>
-          </div>
+          <div class="field-label">User ID</div>
+          <div class="field-value" id="client-user-id"></div>
         </div>
       </div>
+
+      <div class="error-message" style="display: none"></div>
     </div>
     <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
