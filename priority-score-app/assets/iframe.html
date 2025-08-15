@@ -2,20 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div class="wrap">
-      <div class="priority-section">
-        <div class="section-title">
-          <h3>Priority Score</h3>
-        </div>
+      <!-- Priority score section -->
+      <div class="header-container">
+        <div class="priority-title">Priority Score</div>
         <div class="priority-score">
           <div class="priority-icon"></div>
           <span id="score-value"></span>
@@ -23,54 +16,37 @@
         </div>
       </div>
 
-      <!-- Tab Links  -->
-      <div class="tabs-container">
-        <button class="tab-button show">Ticket Information</button>
-        <button class="tab-button">Client Information</button>
-      </div>
-
-      <div class="sliding-divider"></div>
       <div class="divider"></div>
 
-      <!-- Tab Content -->
-      <div id="ticket-info" class="tabs-content-container show">
-        <div class="data-row">
-          <div class="field-label">Subject</div>
-          <div class="field-value" id="ticket-subject"></div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">Created At</div>
-          <div class="field-value" id="date-created"></div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">SLA Due</div>
-          <div class="field-value" id="sla-time"></div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">Priority</div>
-          <div class="field-value">
-            <div class="priority-icon"></div>
-            <span id="priority-value"></span>
-          </div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">Tags</div>
-          <div class="field-value" id="assigned-tags"></div>
-        </div>
-      </div>
+      <!-- Ticket information section  -->
+      <div class="ticket-container">
+        <div class="ticket-title">Ticket Information</div>
 
-      <div id="client-info" class="tabs-content-container hide">
-        <div class="data-row">
-          <div class="field-label">Client Name</div>
-          <div class="field-value" id="client-name"></div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">Email</div>
-          <div class="field-value" id="client-email"></div>
-        </div>
-        <div class="data-row">
-          <div class="field-label">User ID</div>
-          <div class="field-value" id="client-user-id"></div>
+        <!-- Ticket data -->
+        <div class="ticket-data">
+          <div class="data-row">
+            <div class="field-label">Subject</div>
+            <div class="field-value" id="ticket-subject"></div>
+          </div>
+          <div class="data-row">
+            <div class="field-label">Created At</div>
+            <div class="field-value" id="date-created"></div>
+          </div>
+          <div class="data-row">
+            <div class="field-label">SLA Due</div>
+            <div class="field-value" id="sla-time"></div>
+          </div>
+          <div class="data-row">
+            <div class="field-label">Priority</div>
+            <div class="field-value">
+              <div class="priority-icon"></div>
+              <span id="priority-value"></span>
+            </div>
+          </div>
+          <div class="data-row">
+            <div class="field-label">Tags</div>
+            <div class="field-value" id="assigned-tags"></div>
+          </div>
         </div>
       </div>
 

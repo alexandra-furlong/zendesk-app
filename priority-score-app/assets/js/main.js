@@ -6,21 +6,13 @@ $(function () {
   client
     .get("ticket")
     .then(function (ticketData) {
-      console.log("ticket meta:", ticketData.ticket); // TODO: Delete this before submitting
-
       var ticket = ticketData.ticket;
 
-      // Display ticket info & client info if available
+      // Display ticket info
       $("#ticket-subject").text(ticket.subject);
       $("#date-created").text(formatDate(ticket.createdAt));
       $("#priority-value").text(capitalizeFirstLetter(ticket.priority));
       $("#assigned-tags").text(ticket.tags.join(", "));
-
-      if (ticket.requester) {
-        $("#client-name").text(ticket.requester.name);
-        $("#client-email").text(ticket.requester.email);
-        $("#client-user-id").text(ticket.requester.id);
-      }
 
       // Calculate simple priority score
       calculatePriorityScore(ticket);
@@ -30,11 +22,10 @@ $(function () {
     })
     .catch(handleApiError);
 
-  // formatDate()
   // Credit: https://stackoverflow.com/a/63490548
   function formatDate(dateString) {
     if (!dateString) {
-      return "No date provided.";
+      return "Invalid date.";
     }
 
     const options = {
@@ -140,7 +131,7 @@ $(function () {
     // 1. Base priority score (10-50 pts)
     let score = PRIORITY_WEIGHTS[ticket.priority] || PRIORITY_WEIGHTS.normal;
 
-    // 2. SLA-based vs days elapsed factor (0-40 pts)
+    // 2. SLA-based vs days elapsed factor (0-100 pts)
     // Score increases as we approach SLA deadline
     const slaWindow = SLA_WINDOWS[ticket.priority] || SLA_WINDOWS.normal;
     const daysElapsed =
@@ -170,7 +161,5 @@ $(function () {
     setPriorityIcon(score);
 
     $("#score-value").text(score);
-
-    console.log(score);
   }
 });
