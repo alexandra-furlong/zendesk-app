@@ -1,6 +1,8 @@
 # Zendesk-App
 
-A lightweight frontend application that mimics a Zendesk sidebar app. It displays ticket info and a computed priority score based on defined logic.
+A lightweight frontend application that mimics a Zendesk sidebar app. It displays ticket info and a computed priority score based on defined logic. 
+
+Please note this app has been packaged and uploaded to zendesk as a private app under the name <ins>Ticket Priority Assistant</ins>, but I can share my app_id or login information if needed.
 
 [Figma Project Link](https://www.figma.com/design/HnxQB4QHWhnraKlOw95ar2/Zendesk-App?node-id=0-1&t=pF52ebFn1KM0vs5y-1)
 
